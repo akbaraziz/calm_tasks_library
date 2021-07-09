@@ -1,0 +1,1 @@
+Rename-Computer -NewName @@{HOST_NAME }@@
