@@ -1,12 +1,13 @@
 #!/bin/sh
 
+set -ex
+
 #Variables used in this script
 SECOND_LEVEL_DOMAIN_NAME="@@{SECOND_LEVEL_DOMAIN_NAME}@@"
 OpenLDAPServer_address="@@{OpenLDAPServer.address}@@"
 
 #Yum update and upgrade
-sudo yum -y update
-sudo yum -y upgrade
+sudo yum -y update --quiet
 
 #Install required packages
 sudo yum -y install net-tools bind-utils bash-completion nano firewalld
@@ -17,7 +18,7 @@ sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --reload
 
 #Set hostname
-sudo hostnamectl set-hostname openldap-gui
+sudo hostnamectl set-hostname @@{name}@@
 sudo echo "hostname configured!" >> ~/status.txt
 
 #Install epel repo

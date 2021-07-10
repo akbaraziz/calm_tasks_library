@@ -1,6 +1,6 @@
 $swhost = '@@{SolarWinds-HostIP}@@'
-$swuser = '@@{SolarWindsAdmin.username}@@'
-$swpassword = '@@{SolarWindowsAdmin.secret}@@'
+$swuser = '@@{SolarAdmin.username}@@'
+$swpassword = '@@{SolarAdmin.secret}@@'
 $swis = Connect-Swis -Hostname $swhost -Username $swuser -Password $swpassword
 
 $ip_address = Invoke-SwisVerb $swis IPAM.SubnetManagement StartIpReservation @("@@{Network}@@", "24", "0") -Verbose | select -expand '#text'

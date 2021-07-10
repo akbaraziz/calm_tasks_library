@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Nagios_setup.sh
 # Author      : Calm Devops
@@ -9,9 +7,11 @@ set -ex
 # Compatibility : Centos 6, 7
 ##############################################
 
+set -ex
+
 sudo yum update -y --quiet
 sudo yum install -y epel-release
 
 sudo hostnamectl set-hostname --static @@{name}@@
 
-sudo yum install -y --quiet nagios nagios-plugins-all nagios-plugins-nrpe
+sudo yum install -y nagios nagios-plugins-all nagios-plugins-nrpe

@@ -12,9 +12,9 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-username = '@@{infoblox.username}@@'
-username_secret = "@@{infoblox.secret}@@"
-api_server = "@@{infoblox_ip}@@"
+username = '@@{InfoBloxAdmin.username}@@'
+username_secret = "@@{InfoBloxAdmin.secret}@@"
+api_server = "@@{INFOBLOX_IP}@@"
 # * the variable below can be used to determine how the vm hostname will begin
 vm_hostname_prefix = "@@{vm_hostname_prefix}@@"
 # endregion

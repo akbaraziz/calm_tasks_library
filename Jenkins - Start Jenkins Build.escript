@@ -8,10 +8,10 @@
 # endregion
 
 # region capture Calm variables
-api_server = "@@{jenkins_endpoint}@@"
-jenkins_login = "@@{jenkins.username}@@"
-jenkins_api_token = "@@{jenkins.secret}@@"
-jenkins_job_name = "@@{jenkins_job_name}@@" # job that need to be executed
+api_server = "@@{JENKINS_IP}@@"
+jenkins_login = "@@{JenkinsAdmin.username}@@"
+jenkins_api_token = "@@{JenkinsAdmin.secret}@@"
+jenkins_job_name = "@@{JENKINS_JOB_NAME}@@" # job that need to be executed
 jenkins_job_params = "machine_ips=@@{address}@@" # job parameters that need to be executed
 # endregion
 

@@ -8,9 +8,9 @@
 # endregion
 
 # region capture Calm variables
-username = "@@{pe.username}@@"
-username_secret = "@@{pe.secret}@@"
-api_server = "@@{pe_ip}@@"
+username = '@@{PeAdmin.username}@@'
+username_secret = "@@{PeAdmin.secret}@@"
+api_server = "@@{PE_IP}@@"
 image_name = "@@{image_name}@@"
 # endregion
 

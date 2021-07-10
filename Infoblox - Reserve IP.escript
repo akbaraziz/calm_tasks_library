@@ -11,9 +11,9 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-username = '@@{infoblox.username}@@'
-username_secret = "@@{infoblox.secret}@@"
-api_server = "@@{infoblox_ip}@@"
+username = '@@{InfoBloxAdmin.username}@@'
+username_secret = "@@{InfoBloxAdmin.secret}@@"
+api_server = "@@{INFOBLOX_IP}@@"
 hostname = "@@{calm_application_name}@@.@@{domain}@@"
 network = "@@{network}@@"
 name = "@@{calm_application_name}@@"

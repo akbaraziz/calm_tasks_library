@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 #Import jenkins-ci rpm and install jenkins
@@ -8,7 +9,7 @@ sudo yum install -y jenkins
 
 # Enable and Start Jenkins Services
 sudo chkconfig jenkins on
-sudo systemctl start jenkins
+sudo systemctl enable --now jenkins
 
 # Set a Shell for Jenkins User
 sudo usermod -s /bin/bash jenkins

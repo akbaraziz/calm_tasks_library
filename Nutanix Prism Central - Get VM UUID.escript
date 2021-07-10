@@ -7,9 +7,9 @@
 # endregion
 
 # region capture Calm variables
-username = "@@{pc.username}@@"
-username_secret = "@@{pc.secret}@@"
-api_server = "@@{pc_ip}@@"
+username = '@@{PcAdmin.username}@@'
+username_secret = "@@{PcAdmin.secret}@@"
+api_server = "@@{PC_IP}@@"
 vm_name = "@@{platform.spec.name}@@"
 # endregion
 

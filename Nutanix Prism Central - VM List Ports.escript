@@ -28,9 +28,9 @@
 #region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced 
 # * anywhere else in order to improve maintainability.
-$username = '@@{prism_api_user.username}@@'
-$username_secret = "@@{prism_api_user.secret}@@"
-$api_server = "@@{prism_ip}@@"
+username = '@@{PcAdmin.username}@@'
+username_secret = "@@{PcAdmin.secret}@@"
+api_server = "@@{PC_IP}@@"
 #endregion
 
 #region prepare api call

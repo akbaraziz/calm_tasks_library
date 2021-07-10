@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Install_Jenkins.sh
 # Author      : Nutanix Calm
@@ -8,6 +6,8 @@ set -ex
 # Description : Script is used to bootstrap Jenkins
 # Compatibility : Centos 7
 ##############################################
+
+set -ex
 
 # - * - Variables and constants.
 JENKINS_VERSION="@@{JENKINS_VERSION}@@"

@@ -1,7 +1,7 @@
 #cloud-config
 chpasswd:
   list: |
-    root:nutanix/4u
+    root:@@{LinuxAdmin.secret}
   expire: False
 runcmd:
   - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin yes/' /etc/ssh/sshd_config

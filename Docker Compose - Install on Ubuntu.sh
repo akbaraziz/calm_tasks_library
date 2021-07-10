@@ -1,3 +1,9 @@
+#!/bin/bash
+
+set -ex
+
+echo "@@{user_creds}@@" | sudo -S ls
+
 echo "** Installing python-pip..."
 sudo apt-get -y install python-pip
 

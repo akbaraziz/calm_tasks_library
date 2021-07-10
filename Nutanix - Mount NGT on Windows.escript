@@ -12,7 +12,7 @@ pc_user = "@@{PcAdmin.username}@@"
 pc_password = "@@{PcAdmin.secret}@@"
 vm_uuid = "@@{platform.metadata.uuid}@@"
 cluster_uuid = "@@{platform.status.cluster_reference.uuid}@@"
-pc_ip = "@@{pc_ip}@@"
+pc_ip = "@@{PC_IP}@@"
 # endregion
 
 # region prepare variables

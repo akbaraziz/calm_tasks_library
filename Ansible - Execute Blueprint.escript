@@ -5,8 +5,8 @@ htmlcode = """
 htmlStringify = htmlcode.replace("\n", "\\n")
 
 url = '@@{ANSIBLE_SERVER}@@/api/v2/job_templates/10/launch/'
-username = '@@{CRED_AWX.username}@@'
-password = '@@{CRED_AWX.secret}@@'
+username = '@@{AWXAdmin.username}@@'
+password = '@@{AWXAdmin.secret}@@'
 headers = {'Content-Type': 'application/json',  'Accept':'application/json'}
 payload = {
     "extra_vars": "{\n \"html\": \"" + htmlStringify[2:] + "\"\n}",

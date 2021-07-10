@@ -11,9 +11,9 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-username = '@@{pe.username}@@'
-username_secret = "@@{pe.secret}@@"
-api_server = "@@{nutanix_cluster_ip}@@"
+username = '@@{PeAdmin.username}@@'
+username_secret = "@@{PeAdmin.secret}@@"
+api_server = "@@{PE_IP}@@"
 vm_uuid = "@@{vm_uuid}@@"
 # endregion
 

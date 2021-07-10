@@ -8,9 +8,9 @@
 # endregion
 
 # region capture Calm variables
-username = '@@{pe.username}@@'
-username_secret = "@@{pe.secret}@@"
-nutanix_cluster_ip = "@@{nutanix_cluster_ip}@@"
+username = '@@{PeAdmin.username}@@'
+username_secret = "@@{PeAdmin.secret}@@"
+nutanix_cluster_ip = "@@{PE_IP}@@"
 vm_uuid = "@@{vm_uuid}@@"
 protection_domain_name = "@@{protection_domain_name}@@"
 # endregion

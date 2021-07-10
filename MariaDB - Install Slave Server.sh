@@ -1,4 +1,6 @@
-#!/bin/bash -xe
+#!/bin/bash
+
+set -ex
 
 # Disable selinux
 sudo setenforce 0
@@ -23,18 +25,15 @@ sudo vgcreate mariadbDataVG /dev/sdb /dev/sdd /dev/sdc /dev/sde
 sudo lvcreate -l 100%FREE -i4 -I1M -n mariadbDataLV mariadbDataVG          ## Use 1MB to avoid IO amplification
 #lvcreate -l 100%FREE -i4 -I4M -n pgDataLV pgDataVG
 
-
 #MariaDB logs
 sudo pvcreate /dev/sdf /dev/sdg /dev/sdh /dev/sdi
 sudo vgcreate mariadbLogVG /dev/sdf /dev/sdg /dev/sdh /dev/sdi
 sudo lvcreate -l 100%FREE -i2 -I1M -n mariadbLogLV mariadbLogVG            ## Use 1MB to avoid IO amplification
 #lvcreate -l 100%FREE -i2 -I4M -n pgLogLV pgLogVG
 
-
 #Disable LVM read ahead
 sudo lvchange -r 0 /dev/mariadbDataVG/mariadbDataLV
 sudo lvchange -r 0 /dev/mariadbLogVG/mariadbLogLV
-
 
 #Format LVMs with ext4 and use nodiscard to make sure format time is fast on Nutanix due to SCSI unmap
 sudo mkfs.ext4 -E nodiscard /dev/mariadbDataVG/mariadbDataLV
@@ -42,15 +41,14 @@ sudo mkfs.ext4 -E nodiscard /dev/mariadbLogVG/mariadbLogLV
 
 sleep 30
 
-# Install MariaDB
+ Install Mariadb
 echo '[mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.3/rhel7-amd64
+baseurl = http://yum.mariadb.org/10.6/rhel7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1' | sudo tee /etc/yum.repos.d/mariadb.repo
 
 sudo yum install MariaDB-server MariaDB-client -y
-
 
 # Configure MariaDB
 echo '!includedir /etc/my.cnf.d' | sudo tee /etc/my.cnf
@@ -126,8 +124,7 @@ sudo rm -rf /mysql/data/*
 sudo mysql_install_db &>/dev/null
 sudo chown -R mysql:mysql /mysql
 
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
+sudo systemctl enable --now mariadb
 
 # Set root password
 sudo mysqladmin password '@@{MARIADB_PASSWORD}@@'

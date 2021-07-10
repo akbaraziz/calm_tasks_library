@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 #Create seperate vg for cassandra storage
@@ -13,5 +14,5 @@ echo -e "/dev/cassandra_vg/cassandra_lvm \t /var/lib/cassandra \t xfs \t default
 sudo mount -a
 
 #Update yum and install Java
-sudo yum update -y
+sudo yum update -y --quiet
 sudo yum install -y java-1.8.0-openjdk

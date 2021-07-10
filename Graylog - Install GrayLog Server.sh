@@ -3,8 +3,8 @@
 set -ex
 
 ## Initialize Variables
-ADMIN_PASSWORD="@@{ADMIN_PASSWORD}@@"
-ADMIN_EMAIL="@@{ADMIN_EMAIL}@@"
+ADMIN_PASSWORD="@@{GRAYAdmin.secret}@@"
+ADMIN_EMAIL="@@{GRAY_ADMIN_EMAIL}@@"
 VM_IP="@@{STATIC_IP}@@"
 
 HOST_NAME="@@{HOST_NAME}@@"
@@ -15,9 +15,7 @@ sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"${HOST_NAME}"'/' /etc/hosts
 sudo sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"${HOST_NAME}"'/' /etc/sysconfig/network
 sudo echo -e ""${VM_IP}" \t "${HOST_NAME}"" >> /etc/hosts
 
-
-
-sudo yum update -y
+sudo yum update -y --quiet
 sudo setenforce 0
 
 ## Install Java
@@ -61,11 +59,10 @@ sleep 15
 ## Verify elastic search
 sudo curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'
 
-
 ## Install graylog
 sudo rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-4.0-repository_latest.rpm
-sudo yum update -y && sudo yum install -y graylog-server graylog-enterprise-plugins graylog-integrations-plugins graylog-enterprise-integrations-plugins
-
+sudo yum update -y --quiet
+sudo yum install -y graylog-server graylog-enterprise-plugins graylog-integrations-plugins graylog-enterprise-integrations-plugins
 
 ## Configure graylog conf
 sudo sed -i '/password_secret/s/^/#/' /etc/graylog/server/server.conf
@@ -86,13 +83,10 @@ script.inline: false
 script.indexed: false
 script.file: false" | sudo tee -a /etc/graylog/server/server.conf
 
-
-
 sudo sed -i '/web_listen_uri/s/^#//' /etc/graylog/server/server.conf
 
 sudo sed -i "/rest_listen_uri/s/127.0.0.1/${VM_IP}/" /etc/graylog/server/server.conf
 sudo sed -i "/web_listen_uri/s/127.0.0.1/${VM_IP}/" /etc/graylog/server/server.conf
-
 
 ## Start graylog service
 sudo systemctl enable --now graylog-server

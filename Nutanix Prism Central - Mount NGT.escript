@@ -8,11 +8,11 @@
 # endregion
 
 # region capture Calm macros
-pc_user = "@@{PcAdmin.username}@@"
-pc_password = "@@{PcAdmin.secret}@@"
+username = '@@{PcAdmin.username}@@'
+username_secret = "@@{PcAdmin.secret}@@"
+pc_ip = "@@{PC_IP}@@"
 vm_uuid = "@@{platform.metadata.uuid}@@"
 cluster_uuid = "@@{platform.status.cluster_reference.uuid}@@"
-pc_ip = "127.0.0.1"
 # endregion
 
 # region prepare variables

@@ -1,5 +1,5 @@
 
-prism_ip = "127.0.0.1"
+prism_ip = "@@{PC_IP}@@"
 cluster_name = "@@{platform.status.cluster_reference.name}@@"
 nf_chain_name = "PANOS_CHAIN"
 

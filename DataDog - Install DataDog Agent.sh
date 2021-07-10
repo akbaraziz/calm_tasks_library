@@ -2,7 +2,7 @@
 
 set -ex
 
-KEY=930eeda0e850f833c513d66235a6e6f1
+KEY=?
 
 # Install DataDog Agent
 sudo yum install --nogpgcheck -y datadog-agent

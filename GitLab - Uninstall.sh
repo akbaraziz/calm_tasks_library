@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Gitlab_uninstallation.sh
 # Author      : Calm Devops
@@ -8,5 +6,7 @@ set -ex
 # Description : Script to remove gitlab
 # Compatibility : Centos 6, 7
 ##############################################
+
+set -ex
 
 sudo yum remove -y gitlab*

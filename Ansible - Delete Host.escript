@@ -10,10 +10,10 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-awx_username = '@@{AwxAdmin.username}@@'
-awx_password = '@@{AwxAdmin.secret}@@'
-awx_api = '@@{awx_ip}@@'
-host_id = int('@@{awx_host_id}@@')
+awx_username = '@@{AWXAdmin.username}@@'
+awx_password = '@@{AWXAdmin.secret}@@'
+awx_api = '@@{AWX_IP}@@'
+host_id = int('@@{AWX_HOST_ID}@@')
 # endregion
 
 # region functions

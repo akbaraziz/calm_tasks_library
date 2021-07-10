@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : RabbitMQ_setup.sh
 # Author      : Calm Devops
@@ -8,6 +6,8 @@ set -ex
 # Description : Script to setup RabbitMQ 
 # Compatibility : Centos 6, 7
 ##############################################
+
+set -ex
 
 sudo hostnamectl set-hostname --static @@{name}@@
 
@@ -18,4 +18,4 @@ sudo yum install -y erlang
 sudo rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
 sudo yum install -y rabbitmq-server
 
-sudo systemctl start rabbitmq-server
+sudo systemctl enable --now rabbitmq-server

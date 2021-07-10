@@ -10,9 +10,9 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-username = '@@{pc.username}@@'
-username_secret = "@@{pc.secret}@@"
-api_server = "@@{pc_ip}@@"
+username = '@@{PcAdmin.username}@@'
+username_secret = "@@{PcAdmin.secret}@@"
+api_server = "@@{PC_IP}@@"
 vm_name = "@@{vm_name}@@"
 # endregion
 

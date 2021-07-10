@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ex
 ##############################################
 # Name        : Configure_Hadoop_Master.sh
 # Author      : Calm Devops
@@ -7,6 +6,8 @@ set -ex
 # Description : Script to configure Hadoop master with slave details
 # Compatibility : Centos 6, 7
 ##############################################
+
+set -ex
 
 sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.my_cluster
 sudo alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.my_cluster 50

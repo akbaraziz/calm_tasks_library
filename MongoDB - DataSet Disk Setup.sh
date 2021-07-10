@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 ## Variable Initialization
 VG_INFO="@@{VG_INFO}@@"  ### Its in format vgName|NoOfDisks in that VG e.g. "mongoData|3,mongoJournal|1,mongoLog|1"
 PROFILE="@@{PROFILE}@@"  ### provider type e.g. "AZURE"

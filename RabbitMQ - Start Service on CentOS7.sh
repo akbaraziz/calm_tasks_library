@@ -1,15 +1,12 @@
 #!/bin/bash
-set -ex
-
 ##############################################
-# Name        : RabbitMQ_uninstall.sh
+# Name        : RabbitMQ_Start.sh
 # Author      : Calm Devops
 # Version     : 1.0
-# Description : Script to setup RabbitMQ 
+# Description : Script to start RabbitMQ 
 # Compatibility : Centos 6, 7
 ##############################################
 
-sudo yum remove -y erlang
+set -ex
 
-sudo yum remove -y rabbitmq-server
-
+sudo systemctl enable --now rabbitmq-server

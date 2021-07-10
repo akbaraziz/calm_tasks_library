@@ -11,9 +11,9 @@
 # region capture Calm variables
 # * Capture variables here. This makes sure Calm macros are not referenced
 # * anywhere else in order to improve maintainability.
-username = "@@{infoblox.username}@@"
-username_secret = "@@{infoblox.secret}@@"
-api_server = "@@{infoblox_ip}@@"
+username = '@@{InfoBloxAdmin.username}@@'
+username_secret = "@@{InfoBloxAdmin.secret}@@"
+api_server = "@@{INFOBLOX_IP}@@"
 vm_name = "@@{vm_name}@@"
 # grabbing the mac address from a VM called WinVM in the blueprint
 vm_mac = "@@{WinVM.mac_address}@@"

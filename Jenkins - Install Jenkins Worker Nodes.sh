@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Install_Configure_Slave.sh
 # Author      : Nutanix Calm
@@ -8,6 +6,8 @@ set -ex
 # Description : Script is used to bootstrap Jenkins Slave
 # Compatibility : Centos 7
 ##############################################
+
+set -ex
 
 # - * - Variables and constants.
 JENKINS_URL=http://@@{Jenkins_Master.address}@@:8080

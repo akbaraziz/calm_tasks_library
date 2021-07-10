@@ -1,9 +1,9 @@
 resource = "ltm/pool"
-base_url = "@@{f5_url}@@"
+base_url = "@@{F5_URL}@@"
 url = base_url + resource
 url_method = "POST"
-user = "@@{F5.username}@@"
-password = "@@{F5.secret}@@"
+user = "@@{F5Admin.username}@@"
+password = "@@{F5Admin.secret}@@"
 hostname = "@@{service_name}@@-@@{calm_application_name}@@-@@{project_name}@@@@{build_number}@@"
 print "Host Name: " + hostname 
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 VERSION="@@{MONGO_VERSION}@@"
@@ -7,13 +8,16 @@ JOURNAL_PATH="@@{JOURNAL_PATH}@@"
 LOG_PATH="@@{LOG_PATH}@@"
 sudo hostnamectl set-hostname --static @@{HOST_NAME}@@
 
+#Disable SELINUX
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
-echo '[mongodb-org-4.4]
+echo '[mongodb-org-$VERSION]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.4/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/$VERSION/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc' | sudo tee /etc/yum.repos.d/mongodb-4.4.repo
+gpgkey=https://www.mongodb.org/static/pgp/server-$VERSION.asc' | sudo tee /etc/yum.repos.d/mongodb-org-$VERSION.repo
 
 sudo yum install -y --quiet mongodb-org-${VERSION} mongodb-org-server-${VERSION} mongodb-org-shell-${VERSION} mongodb-org-mongos-${VERSION} mongodb-org-tools-${VERSION}
 
@@ -34,11 +38,9 @@ sudo blockdev --getra /dev/dm-2
 sudo sysctl vm.swappiness=1
 echo 'vm.swappiness=1' | sudo tee -a /etc/sysctl.conf
 
-
 sudo sed -i 's/bindIp:/#bindIp:/g' /etc/mongod.conf
 sudo sed -i "s#/var/lib/mongo#${DATA_PATH}#g" /etc/mongod.conf
 sudo sed -i "s#  path: /var/log/mongodb/mongod.log#  path: ${LOG_PATH}/mongod.log#" /etc/mongod.conf
-
 
 if [[ -f /sys/kernel/mm/transparent_hugepage/enabled ]];then
     echo never | sudo tee /sys/kernel/mm/transparent_hugepage/enabled

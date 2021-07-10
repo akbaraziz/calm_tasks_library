@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 # Disable selinux
 sudo setenforce 0
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g;s/SELINUXTYPE=targeted/#&/g' /etc/selinux/config

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ex
+
 #Variables used in this script
 SEEDS="@@{calm_array_address}@@"
 LISTEN_ADDRESS="@@{address}@@"
@@ -20,7 +22,7 @@ sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 
 #Configure cassandra
-sudo service cassandra stop
+sudo systemctl stop cassandra
 rm -rf /var/lib/cassandra/data/system/*
 sudo sed -i 's/cluster_name: \x27Test Cluster\x27/cluster_name: \x27@@{CLUSTER_NAME}@@\x27/' /etc/cassandra/conf/cassandra.yaml
 sudo sed -i "s|- seeds: \"127.0.0.1\"|- seeds: \"${SEEDS}\"|" /etc/cassandra/conf/cassandra.yaml
@@ -31,4 +33,4 @@ sudo sed -i "s|/var/lib/cassandra/data|${DATA_PATH}|" /etc/cassandra/conf/cassan
 echo "auto_bootstrap: true" | sudo tee -a /etc/cassandra/conf/cassandra.yaml
 
 #Start cassandra service
-sudo service cassandra start
+sudo systemctl enable --now cassandra

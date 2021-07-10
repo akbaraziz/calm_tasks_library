@@ -3,8 +3,8 @@ $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A
 Set-ItemProperty -Path $AdminKey -Name "IsInstalled" -Value 0
 
 $puppet_agent = puppet-agent-6.12.0-x86.msi
-$puppet_url = @@{PUPPET_DOWNLOAD_URL }@@
-$puppet_master = @@{PUPPET_MASTER_SERVER }@@
+$puppet_url = @@{PUPPET_DOWNLOAD_URL}@@
+$puppet_master = @@{PUPPET_MASTER_SERVER}@@
 
 # Download Puppet Agent for Windows
 Invoke-WebRequest -Uri $puppet_url -outfile "c:\windows\temp\$puppet_agent"

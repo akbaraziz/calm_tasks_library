@@ -8,9 +8,9 @@
 # endregion
 
 # region capture Calm variables
-username = "@@{pe.username}@@"
-username_secret = "@@{pe.secret}@@"
-api_server = "@@{pe_ip}@@"
+username = '@@{PeAdmin.username}@@'
+username_secret = "@@{PeAdmin.secret}@@"
+api_server = "@@{PE_IP}@@"
 image_vm_disk_id = "@@{image_vm_disk_id}@@"
 vm_uuid = "@@{platform.metadata.uuid}@@"
 disk_list = @@{platform.spec.resources.disk_list}@@

@@ -10,9 +10,9 @@
 # endregion
 
 #region capture Calm variables
-username = '@@{pc.username}@@'
-username_secret = "@@{pc.secret}@@"
-api_server = "@@{pc_ip}@@"
+username = '@@{PcAdmin.username}@@'
+username_secret = "@@{PcAdmin.secret}@@"
+api_server = "@@{PC_IP}@@"
 nutanix_cluster_uuid = "@@{nutanix_cluster_uuid}@@"
 # endregion
 

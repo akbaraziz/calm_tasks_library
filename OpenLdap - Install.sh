@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ex
+
 #Variables used in this script
 SECOND_LEVEL_DOMAIN_NAME="@@{SECOND_LEVEL_DOMAIN_NAME}@@"
 TOP_LEVEL_DOMAIN_NAME="@@{TOP_LEVEL_DOMAIN_NAME}@@"
@@ -9,8 +11,7 @@ CERTIFICATE_STATE="@@{CERTIFICATE_STATE}@@"
 CERTIFICATE_CITY="@@{CERTIFICATE_CITY}@@"
 
 #Yum update and upgrade
-sudo yum -y update
-sudo yum -y upgrade
+sudo yum -y --quiet update
 
 #Install required packages
 sudo yum -y install net-tools bind-utils bash-completion nano firewalld

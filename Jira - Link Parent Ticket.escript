@@ -8,12 +8,13 @@
 # endregion
 
 # region capture Calm variables
-api_server = "@@{jira_endpoint}@@"
-jira_login = "@@{jira_login.username}@@"
-jira_api_token = "@@{jira_api_token.secret}@@"
-jira_link_type = "@@{jira_link_type}@@" #10003 = relates to
-jira_parent_ticket = "@@{jira_parent_ticket}@@"
-jira_child_ticket = "@@{jira_child_ticket}@@"
+api_server = "@@{JIRA_IP}@@"
+jira_login = "@@{JiraAdmin.username}@@"
+jira_api_token = "@@{JiraAPItoken.secret}@@"
+jira_project_key = "@@{JIRA_PROJECT_NAME}@@"
+jira_link_type = "@@{JIRA_LINK_TYPE}@@" #10003 = relates to
+jira_parent_ticket = "@@{JIRA_PARENT_TICKET}@@"
+jira_child_ticket = "@@{JIRA_CHILD_TICKET}@@"
 # endregion
 
 # region prepare api call

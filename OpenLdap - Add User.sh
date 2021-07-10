@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ex
+
 #Variables used in this script
 ADMIN_USER="@@{ADMIN_USER}@@"
 ADMIN_PASSWORD="@@{ADMIN_PASSWORD}@@"
@@ -8,7 +10,6 @@ READONLY_PASSWORD="@@{READONLY_PASSWORD}@@"
 OPENLDAP_PASSWORD="@@{OPENLDAP_PASSWORD}@@"
 SECOND_LEVEL_DOMAIN_NAME="@@{SECOND_LEVEL_DOMAIN_NAME}@@"
 TOP_LEVEL_DOMAIN_NAME="@@{TOP_LEVEL_DOMAIN_NAME}@@"
-
 
 # Test openldap configuration
 sudo /usr/sbin/slaptest -u >> ~/status.txt

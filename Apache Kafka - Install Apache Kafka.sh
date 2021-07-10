@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 # -*- Variables and constants
@@ -17,7 +18,7 @@ ZOOKEEPER_CONNECT=$(echo $CON | sed  's/,$//')
 sudo yum -y --quiet update
 
 # -*- Install zookeeper and kafka
-sudo yum install -y --quiet java-1.8.0-openjdk.x86_64 wget
+sudo yum install -y java-1.8.0-openjdk.x86_64 wget
 
 sudo wget "${KAFKA_URL}" -O /opt/kafka.tgz
 cd /opt/

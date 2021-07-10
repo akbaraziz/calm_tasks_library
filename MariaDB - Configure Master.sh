@@ -1,4 +1,6 @@
-#!/bin/bash -xe
+#!/bin/bash
+
+set -ex
 
 # Configure master to enable replication
 sudo sed -i "/\[mysqld\]/a innodb_flush_log_at_trx_commit=1" /etc/my.cnf.d/nutanix.cnf

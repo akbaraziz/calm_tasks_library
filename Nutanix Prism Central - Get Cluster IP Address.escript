@@ -9,8 +9,8 @@
 # region capture Calm variables
 username = '@@{PcAdmin.username}@@'
 username_secret = "@@{PcAdmin.secret}@@"
+api_server = "@@{PC_IP}@@"
 nutanix_cluster_name = "@@{platform.status.cluster_reference.name}@@"
-pc_ip = "@@{pc_ip}@@"
 # endregion
 
 # region Get AHV cluster IP

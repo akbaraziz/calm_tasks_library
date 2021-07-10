@@ -8,11 +8,11 @@
 # endregion
 
 # region capture Calm variables
-api_server = "@@{jira_endpoint}@@"
-jira_login = "@@{jira_login.username}@@"
-jira_api_token = "@@{jira_api_token.secret}@@"
+api_server = "@@{JIRA_IP}@@"
+jira_login = "@@{JiraAdmin.username}@@"
+jira_api_token = "@@{JiraAPItoken.secret}@@"
 transition_id = 31 # 31 = in progress / 41 = Done
-ticket_name = "@@{jira_ticket_name}@@" # ticket that need to be updated
+ticket_name = "@@{JIRA_TICKET_NAME}@@" # ticket that need to be updated
 # endregion
 
 # region prepare api call

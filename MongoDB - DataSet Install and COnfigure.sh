@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 ##  Variable Initialization
@@ -7,7 +8,6 @@ VERSION="@@{MONGO_VERSION}@@"
 DATA_PATH="@@{DATA_PATH}@@"
 JOURNAL_PATH="@@{JOURNAL_PATH}@@"
 LOG_PATH="@@{LOG_PATH}@@"
-
 
 ## Set hostname
 sudo hostnamectl set-hostname --static @@{name}@@

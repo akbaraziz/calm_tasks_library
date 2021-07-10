@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script author: Akbar Aziz - modified from original script by Danie Pham
-# Script site: https://www.writebash.com
+# Script site: 
 # Script date: 11/30/2020
 # Script ver: 1.0
 # Script use to install Apache on CentOS 7.x
@@ -10,6 +10,8 @@
 # 2. Apache: Apache 2.4.46 (CentOS)
 #
 #--------------------------------------------------
+
+set -ex
 
 # Function check user root
 f_check_root () {

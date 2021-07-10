@@ -8,11 +8,11 @@
 # endregion
 
 # region capture Calm variables
-api_server = "@@{jenkins_endpoint}@@"
-jenkins_login = "@@{jenkins.username}@@"
-jenkins_api_token = "@@{jenkins.secret}@@"
-jenkins_job_name = "@@{jenkins_job_name}@@"
-job_build_id = "@@{job_build_id}@@" # job that need to be monitored
+api_server = "@@{JENKINS_IP}@@"
+jenkins_login = "@@{JenkinsAdmin.username}@@"
+jenkins_api_token = "@@{JenkinsAdmin.secret}@@"
+jenkins_job_name = "@@{JENKINS_JOB_NAME}@@"
+job_build_id = "@@{JOB_BUILD_ID}@@" # job that need to be monitored
 # endregion
 
 # region prepare api call

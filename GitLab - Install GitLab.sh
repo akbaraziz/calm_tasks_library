@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Gitlab_setup.sh
 # Author      : Calm Devops
@@ -9,12 +7,13 @@ set -ex
 # Compatibility : Centos 6, 7
 ##############################################
 
-GITLAB_DNS_NAME="@@{GITLAB_DNS_NAME}@@"
+set -ex
+
+GITLAB_DNS_NAME="@@{HOST_NAME}@@.@@{DOMAIN_NAME}@@"
 
 sudo yum install -y curl policycoreutils-python openssh-server postfix
 
-sudo systemctl start postfix
-sudo systemctl enable postfix
+sudo systemctl enable --now postfix
 sudo systemctl status postfix
 
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash

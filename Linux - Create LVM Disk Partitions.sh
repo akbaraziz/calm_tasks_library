@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 sudo yum install -y lvm2 libudev-devel

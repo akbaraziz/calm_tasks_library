@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 ##############################################
 # Name        : Generic_disk_setup_to_opt.sh
 # Author      : Calm Devops
@@ -9,8 +7,10 @@ set -ex
 # Compatibility : Centos 6, 7
 ##############################################
 
+set -ex
+
 sudo yum update -y --quiet
-sudo yum install -y --quiet lvm2 libudev-devel
+sudo yum install -y lvm2 libudev-devel
 pv_list=""		# This variable will store all the unused/unclaimed disks
 for x in {a..z}; do
     if [ -e /dev/sd$x ];	# For all providers except AWS

@@ -1,6 +1,9 @@
 #!/bin/bash
+
+set -ex
+
 #Preperation
-sudo yum update -y
+sudo yum update -y --quiet
 sudo yum install epel-release -y
 sudo yum install gcc flex bison zlib libpcap pcre libdnet tcpdump -y 
 sudo ln -s /usr/lib64/libdnet.so.1.0.1 /usr/lib64/libdnet.1
@@ -19,7 +22,6 @@ sudo chmod -R 5775 /usr/local/lib/snort_dynamicrules
 sudo chown -R snort:snort /etc/snort
 sudo chown -R snort:snort /var/log/snort
 sudo chown -R snort:snort /usr/local/lib/snort_dynamicrules
-
 
 #Create white and blacklists
 sudo touch /etc/snort/rules/white_list.rules

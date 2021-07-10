@@ -6,11 +6,11 @@ set -ex
 sudo setenforce 0
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g;s/SELINUXTYPE=targeted/#&/g' /etc/selinux/config
 
-# Set hostname
-sudo hostnamectl set-hostname "@@{name}@@"
-
 # Install dependencies
 sudo yum -y install lvm2 iotop
+
+# Set hostname
+sudo hostnamectl set-hostname "@@{name}@@"
 
 ##############
 #
@@ -41,7 +41,7 @@ sudo mkfs.ext4 -E nodiscard /dev/mariadbLogVG/mariadbLogLV
 
 sleep 30
 
- Install Mariadb
+# Install Mariadb
 echo '[mariadb]
 name = MariaDB
 baseurl = http://yum.mariadb.org/10.6/rhel7-amd64
@@ -50,7 +50,7 @@ gpgcheck=1' | sudo tee /etc/yum.repos.d/mariadb.repo
 
 sudo yum install MariaDB-server MariaDB-client -y
 
-# Configure MariaDB
+# Configure Mariadb
 echo '!includedir /etc/my.cnf.d' | sudo tee /etc/my.cnf
 
 echo '[mysqld]
@@ -128,4 +128,3 @@ sudo systemctl enable --now mariadb
 
 # Set root password
 sudo mysqladmin password '@@{MARIADB_PASSWORD}@@'
-
