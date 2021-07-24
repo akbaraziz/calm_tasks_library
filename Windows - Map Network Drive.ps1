@@ -1,0 +1,1 @@
+New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\ntnx-files-1.lab.local\windows-apps" -Persist
