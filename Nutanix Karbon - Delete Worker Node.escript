@@ -5,8 +5,8 @@ payload = {
   "count": @@{remove_worker_node_count}@@
 }
   
-pc_user = '@@{PC_Creds.username}@@'
-pc_pass = '@@{PC_Creds.secret}@@'
+pc_user = '@@{PcAdmin.username}@@'
+pc_pass = '@@{PcAdmin.secret}@@'
 
 
   # Set the address and make images call

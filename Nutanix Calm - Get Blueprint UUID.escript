@@ -8,7 +8,7 @@
 # endregion
 
 # region capture Calm macros
-pc_ip = '@@{pc_ip}@@'
+pc_ip = '@@{PC_IP}@@'
 username = '@@{PcAdmin.username}@@'
 username_secret = '@@{PcAdmin.secret}@@'
 blueprint_name = '@@{blueprint_name}@@'

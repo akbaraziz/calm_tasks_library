@@ -11,7 +11,7 @@
 #region capture Calm variables
 username = '@@{PcAdmin.username}@@'
 username_secret = "@@{PcAdmin.secret}@@"
-api_server = "@@{pc_ip}@@"
+api_server = "@@{PC_IP}@@"
 nutanix_calm_user_uuid = "@@{nutanix_calm_user_uuid}@@"
 nutanix_calm_user_name = "@@{calm_username}@@"
 # endregion

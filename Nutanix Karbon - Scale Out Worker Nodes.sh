@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pc_instance_ip= '10.10.10.35'
+
 # Set authentication cookie
 curl -k -u "@@{Prism Central User.username}@@:@@{Prism Central User.secret}@@" \
 -c /tmp/cookiefile -X POST -H "Accept: application/json" -H "Content-Type: application/json" \

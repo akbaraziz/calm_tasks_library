@@ -8,7 +8,7 @@
 
 #region capture Calm variables
 project_uuid = "@@{project_uuid}@@"
-api_server = "@@{pc_ip}@@"
+api_server = "@@{PC_IP}@@"
 username = "@@{PcAdmin.username}@@"
 username_secret = "@@{PcAdmin.secret}@@"
 #endregion

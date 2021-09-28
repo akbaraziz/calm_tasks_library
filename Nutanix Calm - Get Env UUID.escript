@@ -10,7 +10,7 @@
 #region capture Calm variables
 username = '@@{PcAdmin.username}@@'
 username_secret = "@@{PcAdmin.secret}@@"
-api_server = "@@{pc_ip}@@"
+api_server = "@@{PC_IP}@@"
 #endregion
 
 #region define variables

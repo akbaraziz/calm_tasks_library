@@ -1,7 +1,7 @@
 payload ={}
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-pc_user = '@@{PC_Creds.username}@@'
-pc_pass = '@@{PC_Creds.secret}@@'
+pc_user = '@@{PcAdmin.username}@@'
+pc_pass = '@@{PcAdmin.secret}@@'
 
 count = 0
 while(count < 10):

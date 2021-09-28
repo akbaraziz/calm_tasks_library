@@ -7,7 +7,7 @@
 # endregion
 
 #region capture Calm variables
-api_server = "@@{pc_ip}@@"
+api_server = "@@{PC_IP}@@"
 username = "@@{PcAdmin.username}@@"
 username_secret = "@@{PcAdmin.secret}@@"
 app_name = "@@{target_app}@@"
