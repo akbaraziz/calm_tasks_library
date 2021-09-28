@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -ex
+
 echo "Generate certificate"
 keytool -genkeypair -keystore keystore.p12 -storepass password -alias jetty -keyalg RSA -keysize 2048 -validity 5000 -keypass nutanix/4u -dname 'CN=@@{HOST_NAME}@@.@@{DOMAIN_NAME}@@, OU=IT, O=Home Lab, L=Houston, ST=Texas, C=nexus-1.lab.local' -storetype PKCS12 -ext san=dns:@@{HOST_NAME}@@.@@{DOMAIN_NAME}@@
 echo "Extract nexus_server.pem"

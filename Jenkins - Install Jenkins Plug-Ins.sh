@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 #Download script to install plugins

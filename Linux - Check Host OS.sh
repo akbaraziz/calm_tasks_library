@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 ls /etc/redhat-release
 
 if [ $? -eq 0]

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 # - * - Section 1 <---------- Just a representation of section, Don't use in actual script ---------->

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 # - * - Variables and constants.

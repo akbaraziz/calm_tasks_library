@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -ex
+
 echo "Importing keystore from p12 to jks format"
 sudo keytool -importkeystore -srckeystore keystore.p12 -srcstorepass password -destkeystore keystore.jks -deststorepass password -noprompt
 
